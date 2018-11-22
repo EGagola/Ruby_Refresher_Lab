@@ -49,10 +49,8 @@ describe 'Create tests for a hash' do
   end
 
   it 'all calories should be between 40 to 150' do
-    expect(small_fruit_nutrition_details[:apple][:calories]).to be_between(40,150).inclusive
-    expect(small_fruit_nutrition_details[:avocado][:calories]).to be_between(40,150).inclusive
-    expect(small_fruit_nutrition_details[:kiwifruit][:calories]).to be_between(40,150).inclusive
-    expect(small_fruit_nutrition_details[:plums][:calories]).to be_between(40,150).inclusive
-
+    small_fruit_nutrition_details.each do |key,value|
+      expect(value[:calories]).to be_between(40,150).inclusive
+    end
   end
 end
